@@ -1,0 +1,32 @@
+<?php
+
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$db = 'animals';
+
+$conn = mysqli_connect($servername, $username, $password, $db);
+
+if (!conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = " SELECT * FROM employees;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    echo "These are the employees: \n";
+    foreach ($result as $employee) {
+        echo "ID: $employee->id <br>";
+        echo "Name: $employee->name <br>";
+        echo "Position: $employee->position <br>";
+        echo "Salary: $employee->salary <br>";
+            
+
+        
+        
+    }
+} else {
+    echo "There are 0 results";
+}
+
+?>
