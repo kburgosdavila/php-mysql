@@ -1,0 +1,22 @@
+
+<?php
+
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+
+
+$conn = mysqli_connect($servername, $username, $password);
+
+if (!conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "CREATE DATABASE animals";
+if ($conn->query($sql)) {
+    echo "Successfully created database";
+} else {
+    echo "Error with the query" . $conn->error;
+ }
+
+?>
